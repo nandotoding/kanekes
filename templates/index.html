@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f7f9">
+  <meta name="description" content="Kanekes — practical office-work automation tools.">
+  <title>Kanekes — Office Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="/" aria-label="Kanekes home">
+        <span class="brand-mark">K</span>
+        <span class="brand-name">kanekes<span class="brand-period">.</span></span>
+      </a>
+
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <a class="nav-item active" href="/" aria-current="page">
+          <span class="nav-icon">▦</span><span>Tools</span>
+          <span class="nav-count">1</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-note">
+          <div class="note-icon">✳</div>
+          <div>
+            <strong>Work smarter</strong>
+            <p>Small tools. Less busywork.</p>
+          </div>
+        </div>
+        <div class="version">KANEKES <span>·</span> VERSION 1.0</div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> Tools <span>/</span> <strong>Phone Number Cleanser</strong></div>
+        <div class="topbar-right"><span class="status-dot"></span> All systems ready</div>
+      </header>
+
+      <section class="page-wrap">
+        <div class="page-heading">
+          <div>
+            <div class="eyebrow">OFFICE AUTOMATION TOOLKIT</div>
+            <h1>Make work flow.</h1>
+            <p class="page-subtitle">A simple workspace for everyday office tasks.</p>
+          </div>
+          <div class="heading-decoration" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="workspace-grid">
+          <section class="tools-panel">
+            <div class="section-heading">
+              <div>
+                <h2>Available tools</h2>
+                <p>Select a tool to get started.</p>
+              </div>
+              <span class="small-counter">01 TOOL</span>
+            </div>
+
+            <button class="tool-card selected" type="button" id="phoneToolCard">
+              <span class="tool-card-icon">⌁</span>
+              <span class="tool-card-copy">
+                <strong>Phone Number Cleanser</strong>
+                <small>Clean, normalize, and organize contact rows.</small>
+              </span>
+              <span class="tool-arrow">↗</span>
+            </button>
+            <div class="future-tools">
+              <span class="future-plus">+</span>
+              <span><strong>More tools, when you need them</strong><small>Kanekes is designed to grow with your workflow.</small></span>
+            </div>
+          </section>
+
+          <section class="tool-workspace">
+            <div class="tool-title-row">
+              <div class="tool-title-icon">⌁</div>
+              <div>
+                <div class="eyebrow">TEXT PROCESSING</div>
+                <h2>Phone Number Cleanser</h2>
+                <p>Turn messy contact lists into clean, consistent rows.</p>
+              </div>
+            </div>
+
+            <div class="editor-card">
+              <div class="editor-heading">
+                <label for="inputText">Input data</label>
+                <span>PLAIN TEXT · ONE OR MORE ROWS</span>
+              </div>
+              <textarea id="inputText" spellcheck="false" placeholder="Paste your contact data here...
+
+Example:
+1. Additional text - John Doe 081312122323
+Jane Smith - +6281234567890
+6285723233434 Alex"></textarea>
+              <div class="editor-footer">
+                <span id="inputStats">0 characters</span>
+                <button class="text-button" id="clearButton" type="button">Clear input</button>
+              </div>
+            </div>
+
+            <div class="action-row">
+              <div class="helper-text"><span class="helper-spark">✦</span> Rows without a detectable number are skipped.</div>
+              <button class="primary-button" id="cleanButton" type="button">
+                <span>Clean data</span><span class="button-arrow">→</span>
+              </button>
+            </div>
+
+            <div class="editor-card output-card">
+              <div class="editor-heading">
+                <label for="outputText">Cleaned output</label>
+                <span id="outputStatus">READY WHEN YOU ARE</span>
+              </div>
+              <textarea id="outputText" spellcheck="false" readonly placeholder="Your cleaned data will appear here..."></textarea>
+              <div class="editor-footer">
+                <span id="outputStats">0 rows</span>
+                <div class="output-actions">
+                  <button class="text-button" id="downloadButton" type="button" disabled>↓ Download .txt</button>
+                  <button class="copy-button" id="copyButton" type="button" disabled>Copy output</button>
+                </div>
+              </div>
+            </div>
+            <p class="privacy-note"><span>◈</span> Your text is processed by this app and is not saved to a database.</p>
+          </section>
+        </div>
+
+        <footer class="page-footer">
+          <span>© 2026 Kanekes</span>
+          <span>Built for better workflows.</span>
+        </footer>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

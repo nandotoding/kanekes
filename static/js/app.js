@@ -2,6 +2,7 @@ const inputText = document.getElementById("inputText");
 const outputText = document.getElementById("outputText");
 const cleanButton = document.getElementById("cleanButton");
 const clearButton = document.getElementById("clearButton");
+const clearOutputButton = document.getElementById("clearOutputButton");
 const copyButton = document.getElementById("copyButton");
 const downloadButton = document.getElementById("downloadButton");
 const inputStats = document.getElementById("inputStats");
@@ -44,6 +45,7 @@ cleanButton.addEventListener("click", async () => {
     outputStatus.textContent = data.processed_rows ? "CLEANING COMPLETE" : "NO MATCHING ROWS";
     copyButton.disabled = !data.result;
     downloadButton.disabled = !data.result;
+    clearOutputButton.disabled = !data.result;
     showToast(data.processed_rows ? `${data.processed_rows} row(s) cleaned successfully.` : "No rows with detectable numbers were found.");
   } catch (error) {
     showToast(error.message || "Something went wrong.");
@@ -57,6 +59,16 @@ clearButton.addEventListener("click", () => {
   inputText.value = "";
   updateInputStats();
   inputText.focus();
+});
+
+clearOutputButton.addEventListener("click", () => {
+  outputText.value = "";
+  outputStats.textContent = "0 rows";
+  outputStatus.textContent = "READY WHEN YOU ARE";
+  copyButton.disabled = true;
+  downloadButton.disabled = true;
+  clearOutputButton.disabled = true;
+  showToast("Output cleared.");
 });
 
 copyButton.addEventListener("click", async () => {
